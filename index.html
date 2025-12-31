@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhisht Jaiswal - Software Developer & AI Enthusiast</title>
+    <title>Abhisht's Portfolio</title>
+    <!-- favicon -->
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 
     <!-- Google Fonts for interactive sections -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -11,25 +13,38 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+<img id="lightbox-img" src="" alt="Preview">
+</div>
 <body>
     <!-- Navigation -->
     <!-- Navigation with Resume Button -->
-<nav>
-    <div class="logo">Abhisht</div>
-    <ul>
+<nav class="navbar">
+  <div class="nav-container">
+
+    <!-- Logo -->
+    <div class="nav-logo">
+        <img src="logo.png" alt="logo">
+    </div>
+    <!-- Toggle Button (mobile) -->
+    <button class="nav-toggle" aria-label="Toggle Menu">☰</button>
+    <!-- Navigation Links -->
+    <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#certifications">Certifications</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-        <!-- RESUME BUTTON IN NAV -->
-        <!-- <button class="resume-toggle" id="resumeToggle" aria-label="Download Resume">
-        📄
-    </button> -->
     
+  </div>
 </nav>
+
+<!-- Backdrop (IMPORTANT for mobile close) -->
+<!-- <div class="menu-backdrop"></div> -->
+
 
 
     <!-- Hero Section (homepage – keep original font) -->
@@ -39,7 +54,7 @@
         </div>
 
         <div class="avatar-container">
-            <div class="avatar" id="avatar">
+            <!-- <div class="avatar" id="avatar">
                 <div class="avatar-face">
                     <div class="car-body">
                         <div class="car-top">
@@ -51,6 +66,29 @@
                     <div class="wheel wheel-1"></div>
                     <div class="wheel wheel-2"></div>
                 </div>
+            </div> -->
+            <div class="car-text-wrapper">
+                <!-- SVG rotating text -->
+                    <svg class="circular-text" viewBox="0 0 300 300" >
+                    <defs>
+                    <path
+                        id="circlePath"
+                        d="M150,150 m-120,0 a120,120 0 1,1 240,0 a120,120 0 1,1 -240,0"
+                    />
+                    </defs>
+
+                    <text>
+                        <textPath href="#circlePath" >
+                            ❤ MADE WITH LOVE ❤ MADE WITH LOVE ❤ MADE WITH LOVE ❤ MADE WITH LOVE
+                        </textPath>
+                    </text>
+                    </svg>
+
+                    <!-- Image -->
+                    <div class="profile-image">
+                    <img src="pic hp bw.jpeg" alt="Abhisht Jaiswal" class="theme-img dark-img">
+                    <img src="pic hp col.jpeg" alt="Abhisht Jaiswal" class="theme-img light-img">
+                    </div>
             </div>
         </div>
     </section>
@@ -66,19 +104,15 @@
                     <p>When I'm not coding, I enjoy exploring emerging technologies, contributing to open-source projects, and sharing knowledge with fellow developers as a Vice President at Manan Club and App Development Lead at GDG-GNIOT. Beyond tech, I love getting into cars, listening to music, and capturing moments through photography.</p>
                 </div>
                 <div class="about-images-grid">
-                    <div class="about-image">
-                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/b34b38a6-a5a5-449e-bd3c-c7b62fe6e160.png" alt="Abhisht Jaiswal - Creative Developer">
-                        <span class="about-image-label"><!-- Developer --></span> 
-                        
-                    </div>
-                    <div class="about-image">
-                        <img src="D:\Abhisht\Projects\abhisht_robbowen_95percent\WhatsApp Image 2025-12-28 at 11.53.08 AM.jpeg" alt="Abhisht Jaiswal - Professional">
-                        <span class="about-image-label"><!-- Professional --></span>
+                    <div class="about-image fx-card">
+                        <img src="pfp2.png" alt="Abhisht Jaiswal - Creative Developer">
+                        <span class="about-image-label"></span> 
+                        <span class="fx-overlay"></span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section>      
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
@@ -86,11 +120,16 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">📰</div>
+                    
+                    <div class="project-image" ></div>
+                    
                     <div class="project-info">
-                        <h3 class="project-title">News Recommendation System</h3>
+                        
+                        <h3 class="project-title"><a href="https://github.com/Abhisht-911/News-Recommendation-System" target="_blank">News Recommendation System  </a></h3>
+                        
                         <p class="project-description">A frontend-focused project that delivers curated news based on user preferences while ensuring a smooth and readable interface. Addresses the challenge of staying updated with relevant news in today's fast-paced digital world. &amp; CSS.</p>
                         <div class="project-tags">
+                            
                             <span class="tag">HTML/CSS</span>
                             <span class="tag">API Integration</span>
                             <span class="tag">JavaScript</span>
@@ -99,10 +138,10 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image">🌾</div>
+                    <div class="project-image"></div>
                     <div class="project-info">
-                        <h3 class="project-title">AgriConnect</h3>
-                        <p class="project-description">A hackathon project from Hack2Hustle that connects farmers directly with buyers. App enables farmers to list their crops for bidding with user-friendly interface and effective functionality.</p>
+                        <h3 class="project-title"><a href="https://github.com/Abhisht-911/AgriConnect" target="_blank">AgriConnect</a></h3>
+                        <p class="project-description">A platform that connects farmers directly with buyers. App enables farmers to list their crops for bidding with user-friendly interface and effective functionality.</p>
                         <div class="project-tags">
                             <span class="tag">Flutter</span>
                             <span class="tag">UX Research</span>
@@ -193,13 +232,15 @@
             <h2 class="section-title">Certifications</h2>
             <div class="certifications-list">
                 <div class="certification-item">
-                    <div class="cert-date">Sep 2024 - Jan 2025</div>
+                    <img src="c.png" alt="Certificate" height="200px" width="100%">
+                    <!-- <div class="cert-date">Sep 2024 - Jan 2025</div> -->
                     <div class="cert-name">C Programming</div>
                     <div class="cert-issuer">E&amp;ICT Academy, IIT Kanpur</div>
                 </div>
 
                 <div class="certification-item">
-                    <div class="cert-date">October 2025</div>
+                    <img src="oracle certificate.png" alt="Certificate" height="200px" width="100%">
+                    <!-- <div class="cert-date">October 2025</div> -->
                     <div class="cert-name">Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</div>
                     <div class="cert-issuer">Oracle</div>
                 </div>
@@ -207,7 +248,8 @@
                 <!-- 8. OOPS with C (NEW) -->
 <div class="certification-item">
     <!-- <div class="cert-icon">⚙️</div> -->
-    <div class="cert-date">Apr - May 2025</div>
+     <img src="oops cpp.png" alt="Certificate" height="200px" width="100%">
+    <!-- <div class="cert-date">Apr - May 2025</div> -->
     <div class="cert-name">OOPS with C++</div>
     <div class="cert-issuer">E&ICT Academy, IIT Kanpur</div>
 </div>
@@ -215,27 +257,31 @@
 <!-- 9. Power BI Workshop (NEW) -->
 <div class="certification-item">
     <!-- <div class="cert-icon">📊</div> -->
-    <div class="cert-date">Apr 2025</div>
+     <img src="" alt="Certificate" height="200px" width="100%">
+    <!-- <div class="cert-date">Apr 2025</div> -->
     <div class="cert-name">Workshop on Power BI</div>
     <div class="cert-issuer">Ducat</div>
 </div>
 
 
                 <div class="certification-item">
-                    <div class="cert-date">Nov - Dec 2025</div>
+                    <img src="" alt="Certificate" height="200px" width="100%">
+                    <!-- <div class="cert-date">Nov - Dec 2025</div> -->
                     <div class="cert-name">Gen AI Study Jam Program</div>
                     <div class="cert-issuer">Google Cloud</div>
                 </div>
 
                 
                 <div class="certification-item">
-                    <div class="cert-date">February 2025</div>
+                    <img src="Deloitte.png" alt="Certificate" height="200px" width="100%">
+                    <!-- <div class="cert-date">February 2025</div> -->
                     <div class="cert-name">Deloitte Technology Job Simulation</div>
                     <div class="cert-issuer">Forage</div>
                 </div>
 
                 <div class="certification-item">
-                    <div class="cert-date">Completed</div>
+                    <img src="cisco cs.png" alt="Certificate" height="200px" width="100%">
+                    <!-- <div class="cert-date">Completed</div> -->
                     <div class="cert-name">Introduction to Cyber Security</div>
                     <div class="cert-issuer">CISCO Networking Academy</div>
                 </div>
@@ -248,7 +294,8 @@
         <h2>Let's Connect</h2>
         <p class="subtitle">Have a project or opportunity? I'd love to hear from you!</p>
         <div class="contact-links">
-            <a href="mailto:abhishtfzd@gmail.com" class="contact-link">Email</a>
+            <a href="mailto:abhisht0911@gmail.com" class="contact-link">Email</a>
+            <a href="https://www.instagram.com/abhishtjaiswal_/" target="_blank" class="contact-link">Instagram</a>
             <a href="https://www.linkedin.com/in/abhishtjaiswal" target="_blank" class="contact-link">LinkedIn</a>
             <a href="https://github.com/Abhisht-911" target="_blank" class="contact-link">GitHub</a>
             <a href="tel:+919119914640" class="contact-link">Phone</a>
@@ -257,7 +304,7 @@
 
     <!-- RESUME BUTTON IN NAV -->
         <button class="resume-toggle" id="resumeToggle" aria-label="Download Resume">
-        📄
+        Resume
     </button>
     <!-- Theme Toggle Button -->
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
