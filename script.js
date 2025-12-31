@@ -1,3 +1,8 @@
+// Safety reset (prevents stuck state on reload)
+document.body.classList.remove('menu-open');
+document.querySelector('.nav-links')?.classList.remove('active');
+
+
 // Dark Mode Toggle
 const themeToggle = document.getElementById('themeToggle');
 const htmlElement = document.documentElement;
@@ -95,4 +100,48 @@ if (resumeToggle) {
         link.click();
         document.body.removeChild(link);
     });
+}
+
+// lightbox
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+document.querySelectorAll(".certification-item img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add("active");
+  });
+});
+
+// Close on background click
+lightbox.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+});
+
+// Close on ESC key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    lightbox.classList.remove("active");
+  }
+});
+
+// navigation side bar for mobile
+const toggleBtn = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+
+toggleBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+function setTheme(mode) {
+  if (mode === 'dark') {
+    document.body.classList.add('dark');
+    document.getElementById('img-light').style.display = 'none';
+    document.getElementById('img-dark').style.display = 'block';
+  } else {
+    document.body.classList.remove('dark');
+    document.getElementById('img-light').style.display = 'block';
+    document.getElementById('img-dark').style.display = 'none';
+  }
 }
