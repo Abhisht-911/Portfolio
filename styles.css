@@ -55,6 +55,10 @@ body {
 
 }
 
+.project-title a {
+    color: black;
+}
+
 .project-description {
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 400;
@@ -210,7 +214,7 @@ footer {
 }
 
 /* Hover underline */
-.nav-links li a:hover {
+.nav-links li a:hover {  
   color: #B6244F;
 }
 
@@ -273,13 +277,13 @@ body.menu-open main {
     position: fixed;
     bottom: 100px;
     right: 30px;
-    width: 80px;
+    width: 50px;
     height: 50px;
     border-radius: 60%;
-    background: linear-gradient(135deg, #B6244F, #FF6B35);
+    background: linear-gradient(135deg, #e35c84, #B6244F);
     border: none;
     color: white;
-    font-size: 15px;
+    font-size: 25px;
     font-family: "Montserrat", sans-serif;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(182, 36, 79, 0.4);
@@ -313,7 +317,7 @@ body.menu-open main {
 
 /* Dark Mode */
 body.dark-mode .resume-toggle {
-    background: linear-gradient(135deg, #FF6B35, #FFD700);
+    background: linear-gradient(135deg, #ff6d38, #ff711f);
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.5);
 }
 
@@ -327,9 +331,9 @@ body.dark-mode .resume-toggle:hover {
         bottom: 90px;
         right: 30px;
         left: auto;
-        width: 45px;
-        height: 45px;
-        font-size: 8px;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
         margin-left: 10px;
     }       
 }
@@ -635,7 +639,7 @@ body.dark-mode .section-title::after {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #FF6B35, #FF8A50);
+    background: linear-gradient(135deg, #e35c84, #B6244F);
     border: none;
     color: white;
     font-size: 24px;
@@ -658,12 +662,12 @@ body.dark-mode .section-title::after {
 }
 
 body.dark-mode .theme-toggle {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
+    background: linear-gradient(135deg,  #ff6d38, #ff711f);
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
 body.dark-mode .theme-toggle:hover {
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+    box-shadow: 0 6px 20px rgba(182, 36, 79, 0.6);
 }
 
 /* Sections */
@@ -868,6 +872,8 @@ section {
   letter-spacing: 3.1px;
   fill: #B6244F;
   text-transform: uppercase;
+  height: 100%;
+  width: 100%;
 }
 
 body.dark-mode .circular-text text {
@@ -876,6 +882,8 @@ body.dark-mode .circular-text text {
 
 /* Image container */
 .profile-image {
+  align-items: center;
+  justify-content: center;
   width: 390px;
   height: 390px;
   border-radius: 50%;
@@ -1470,12 +1478,13 @@ footer {
 
   .nav-links li a {
     font-size: 18px;
-    opacity: 0;
+    /* opacity: 0; */
     color: #222;
     transform: translateY(10px);
     animation: fadeIn 0.3s ease forwards;
   }
   
+
   body.menu-open {
     overflow: hidden;
   }
@@ -1557,4 +1566,5 @@ footer {
 /* Cursor hint */
 .certification-item img {
   cursor: zoom-in;
+  height: 80%;
 }
