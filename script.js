@@ -12,11 +12,11 @@ function applyTheme(theme) {
     if (theme === 'dark') {
         htmlElement.classList.add('dark-mode');
         body.classList.add('dark-mode');
-        themeToggle.textContent = '☀️';
+        themeToggle.textContent = '☀';
     } else {
         htmlElement.classList.remove('dark-mode');
         body.classList.remove('dark-mode');
-        themeToggle.textContent = '🌙';
+        themeToggle.textContent = '𖤓';
     }
 }
 
