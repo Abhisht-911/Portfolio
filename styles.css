@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 * {
-    margin: 0;
+    margin: 2;
     padding: 0;
     box-sizing: border-box;
 }
@@ -193,6 +193,7 @@ footer {
   margin: 0;
   padding: 0;
   z-index: 2000;
+  
 }
 
 
@@ -239,6 +240,7 @@ footer {
   border: none;
   font-size: 28px;
   cursor: pointer;
+  color: #B6244F;
 }
 
 
@@ -416,7 +418,9 @@ h1 {
     align-items: center;
     perspective: 1200px;
     position: relative;
-    height: 500px;
+    height: auto;
+    padding: 20px 0;
+    padding-bottom: 100px;
     animation: slideInRight 0.9s cubic-bezier(0.23, 1, 0.320, 1);   
 }
 
@@ -559,7 +563,7 @@ body.dark-mode nav a {
 }
 
 body.dark-mode .nav-links li a:hover {
-  color: #FF6B35;
+  color: linear-gradient(135deg, #FFB366, #FF6B35);
 }
 
 body.dark-mode .logo {
@@ -612,6 +616,11 @@ body.dark-mode .certification-item {
     background: #2d2d2d;
     border-color: rgba(255, 107, 53, 0.2);
 
+}
+
+body.dark-mode .nav-links{
+    background: #1a1a1a;
+    border: rgba(255, 107, 53, 0.2);
 }
 
 body.dark-mode .skill-category {
@@ -849,31 +858,34 @@ section {
 /* homepage image */
 .circular-text-wrapper {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px auto;
 }
 
 /* SVG text ring */
 .circular-text {
   position: absolute;
-  inset: 0;
-  transform: rotate(-90deg); 
-  width: 100%;
-  height: 100%;
-  animation: rotateText 12s linear infinite;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  animation: rotateText 15s linear infinite;
+  z-index: 2;
 }
 
 .circular-text text {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  letter-spacing: 3.1px;
+  font-size: 24px;
+  letter-spacing: 3.07px;
   fill: #B6244F;
   text-transform: uppercase;
-  height: 100%;
-  width: 100%;
+  /* height: 100%; */
+  /* width: 100%; */
 }
 
 body.dark-mode .circular-text text {
@@ -882,16 +894,20 @@ body.dark-mode .circular-text text {
 
 /* Image container */
 .profile-image {
-  align-items: center;
-  justify-content: center;
-  width: 390px;
-  height: 390px;
+    position: absolute;
+  /* align-items: center;
+  justify-content: center; */
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
   background: #fff;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2); 
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45); 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
  } 
 
 .profile-image img {
@@ -900,25 +916,85 @@ body.dark-mode .circular-text text {
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .circular-text-wrapper {
+    /* display: none; */
+    /* position: relative; */
+    width: 280px;
+    /* inset: 0; */
+    height: 280px;
+    margin: 20px auto;
+  }
+
+  .circular-text {
     width: 300px;
     height: 300px;
   }
 
+
   .profile-image {
-    width: 210px;
-    height: 210px;
+    width: 230px;
+    height: 230px;
+      overflow: hidden;
+}
+    .circular-text text {
+    font-size: 16.7px;
+    letter-spacing: 2px;
   }
+  
 } 
+
+/* ========== SMALL TABLET (641px - 768px) ========== */
+@media (min-width: 641px) and (max-width: 768px) {
+  .circular-text-wrapper {
+    width: 280px;
+    height: 280px;
+    margin: 20px auto;
+  }
+
+  .profile-image {
+    width: 310px;
+    height: 310px;
+  }
+
+  .circular-text text {
+    font-size: 15px;
+    letter-spacing: 2.5px;
+  }
+}
+
+/* ========== DESKTOP (min-width: 769px) ========== */
+@media (min-width: 769px) {
+  .circular-text-wrapper {
+    width: 390px;
+    height: 390px;
+    margin: 0;
+  }
+
+  .circular-text {
+    width: 450px;
+    height: 450px;
+  }
+
+  .profile-image {
+    width: 350px;
+    height: 350px;
+  }
+
+  .circular-text text {
+    font-size: 14px;
+    letter-spacing: 3.07px;
+  }
+}
+
 
 /* Rotation animation */
 @keyframes rotateText {
   from {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(-90deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(270deg);
   }
 }
 
@@ -1471,6 +1547,10 @@ footer {
     /* z-index: 1002; */
   }
 
+
+
+  
+
   .nav-links.active {
     display: flex;
     transform: translateY(0);
@@ -1500,7 +1580,7 @@ footer {
 
     .avatar-container {
         margin-top: 40px;
-        height: 300px;
+        height: auto;
     }
 
     .avatar {
