@@ -59,6 +59,10 @@ body {
     color: black;
 }
 
+body.dark-mode .project-title a {
+    color: white;
+}
+
 .project-description {
     font-family: 'Inter', system-ui, sans-serif;
     font-weight: 400;
