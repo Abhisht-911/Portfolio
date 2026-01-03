@@ -382,7 +382,6 @@ body.dark-mode .resume-toggle:hover {
 
 
 .hero-content {
-    flex: 1;
     max-width: 500px;
     position: relative;
     z-index: 2;
